@@ -3,7 +3,7 @@ This is the repository for 'DCCUNet: A Double Cross-Shaped Network for Pathology
 
 # Architecture
 <p align="center">
-<img src="img/Architecture.png">
+<img src="img/Architecture.jpg">
 </p>
 
 # Dataset Structure
