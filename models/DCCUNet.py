@@ -7,7 +7,7 @@ class DCCA(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=1, bias=False):
         super(DCCA, self).__init__()
 
-        # 深度卷积
+        
         self.depthwise = nn.Conv2d(
             in_channels, in_channels, kernel_size,
             stride=stride, padding=padding,
@@ -15,7 +15,7 @@ class DCCA(nn.Module):
         )
 
         self.CC = CrissCrossAttention(in_channels)
-        # 逐点卷积
+        
         self.pointwise = nn.Conv2d(
             in_channels, out_channels, kernel_size=1,
             stride=1, padding=0, bias=bias
