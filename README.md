@@ -25,7 +25,7 @@ The dataset is organized as follows:
        - .......
 
 # Train and Test
-Please use Trainer.py and Test.py for model training and prediction. 
+Please use Train.py and Test.py for model training and prediction. 
 
 # Datasets
 The following datasets are used in this experiment:
