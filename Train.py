@@ -19,7 +19,6 @@ from torch import nn, optim
 from torch.utils.data import DataLoader
 from torchvision.transforms import transforms
 
-# 是否使用cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
@@ -142,8 +141,6 @@ def train_model(epoch, model, criterion, optimizer, dataload, num_epochs, used_m
             torch.save(model.state_dict(), 'saved_weights/%s/%s_%s_DiceBCE_bestA_model.pth' % (save_model, used_model, datasets))
             print("Save the best model: [%s-%s] epoch, Loss: [%s]" % (used_model, epoch, save_index))
 
-
-# 训练模型
 def train(args, used_model, data_nam, model, save_model):
     criterion = nn.BCEWithLogitsLoss()
     optimizer = optim.Adam(model.parameters(), lr=1e-4)
@@ -160,7 +157,6 @@ if __name__ == '__main__':
     print("torch.cuda GPU:", torch.cuda.is_available())
     torch.cuda.set_device(0)
 
-    # 参数解析
     parse = argparse.ArgumentParser()
     parse.add_argument("--epoch", type=int, default=1, help="the start of epoch")
     parse.add_argument("--num_epoch", type=int, default=3, help="the number of epoches")
